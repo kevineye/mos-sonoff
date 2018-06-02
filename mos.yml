@@ -9,8 +9,14 @@ mongoose_os_version: ${mos.version}
 build_vars:
   FLASH_SIZE: 1048576
 
+sources:
+  - src
+
 filesystem:
   - fs
+
+cflags:
+  - "-Wno-unused-parameter"
 
 config_schema:
   - ["app", "o", {title: "App settings"}]

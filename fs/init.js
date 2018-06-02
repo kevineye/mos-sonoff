@@ -5,7 +5,6 @@ load('api_mqtt.js');
 load('ready.js');
 
 let topic_base = Cfg.get('app.mqtt_topic');
-Cfg.set({mqtt: { will_message: '{"state":"OFF"}', will_topic: topic_base + "/switch"}}, false);
 
 let led_pin = Cfg.get('app.led_pin');
 GPIO.set_mode(led_pin, GPIO.MODE_OUTPUT);
