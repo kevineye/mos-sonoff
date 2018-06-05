@@ -20,10 +20,14 @@ cflags:
 
 config_schema:
   - ["app", "o", {title: "App settings"}]
-  - ["app.led_pin", "i", 13, {title: "LED GPIO pin; use 13 for sonoff, 2 for dev board"}]
-  - ["app.switch_pin", "i", 12, {title: "relay GPIO pin; use 12 for sonoff, 4 for dev board"}]
-  - ["app.button_pin", "i", 0, {title: "button GPIO pin; use 0 for sonoff, 5 for dev board"}]
-  - ["app.mqtt_topic", "s", "home/sonoff-dev", {title: "MQTT topic base path"}]
+  - ["app.mqtt_topic", "s", "home/dev", {title: "MQTT topic base"}]
+  - ["app.led_pin", "i", 13, {title: "LED GPIO pin (default GPIO13 for sonoff, use GPIO2 = D4 for dev board)"}]
+  - ["button", "o", {title: "Button settings"}]
+  - ["button.pin", "i", 0, {title: "button GPIO pin (default GPIO0 for sonoff, use GPIO5 = D1 for dev board"}]
+  - ["button.mqtt_topic", "s", "button", {title: "relative topic to post button events"}]
+  - ["relay", "o", {title: "Relay settings"}]
+  - ["relay.mqtt_topic", "s", "switch", {title: "relative topic to post/receive relay events"}]
+  - ["relay.pin", "i", 12, {title: "switch GPIO pin (default GPIO12 for sonoff, use GPIO4 = D2 for dev board)"}]
 
 libs:
   - origin: https://github.com/mongoose-os-libs/ca-bundle
